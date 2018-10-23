@@ -1,0 +1,379 @@
+/* Variable */
+:root {
+  --backgroundColor: #E5F0F9;
+  --backgroundInverse: #19232D;
+  --backgroundText: #2C6BB3;
+  --primaryColor: #E6EAEF;
+  --primaryText: #343D46;
+  --secondaryColor: #505F7B;
+  --secondaryText: #2B3954;
+  --eventActive: #8AB6E9;
+  --eventInfo: #8AB6E9;
+  --eventSuccess: #94CE9C;
+  --eventAlert: #FEC271;
+  --eventDanger: #DF6668;
+}
+.blueLight {
+  --backgroundColor: #E5F0F9;
+  --backgroundInverse: #19232D;
+  --backgroundText: #2C6BB3;
+  --primaryColor: #E6EAEF;
+  --primaryText: #343D46;
+  --secondaryColor: #505F7B;
+  --secondaryText: #2B3954;
+  --eventActive: #8AB6E9;
+  --eventInfo: #8AB6E9;
+  --eventSuccess: #94CE9C;
+  --eventAlert: #FEC271;
+  --eventDanger: #DF6668;
+}
+.dusk {
+  --backgroundColor: #F7E7E7;
+  --backgroundInverse: #361010;
+  --backgroundText: #FB7346;
+  --primaryColor: #FFE3D6;
+  --primaryText: #343D46;
+  --secondaryColor: #FBB887;
+  --secondaryText: #DF8E75;
+  --eventActive: #F99470;
+  --eventInfo: #8AB6E9;
+  --eventSuccess: #94CE9C;
+  --eventAlert: #FEC271;
+  --eventDanger: #DF6668;
+}
+.moonNight {
+  --backgroundColor: #19232D;
+  --backgroundInverse: #E5F0F9;
+  --backgroundText: #2C6BB3;
+  --primaryColor: #343D46;
+  --primaryText: #E6EAEF;
+  --secondaryColor: #2B3954;
+  --secondaryText: #505F7B;
+  --eventActive: #325A9F;
+  --eventInfo: #325A9F;
+  --eventSuccess: #80AE35;
+  --eventAlert: #ECAC43;
+  --eventDanger: #FE2C32;
+}
+
+/* CSS Grid */
+.grid-wrapper {
+  background: var(--backgroundColor);
+  background: linear-gradient(180deg, var(--backgroundColor) 0%, var(--backgroundColor) 60%, var(--secondaryColor) 95%);
+  display: grid;
+  /* grid-gap: 1rem; */
+  grid-template-areas:
+    "header header header header header header header"
+    "asideLogo leftNav leftNavCorner . rightNavCorner rightNav themeChanger"
+    ". main main main main main ."
+    "footer footer footer footer footer footer footer";
+  grid-template-columns: 1fr 6fr .5fr 1fr .5fr 3fr 1fr;
+}
+
+/* Structure Eelemet Styling */
+body {
+  background: var(--secondaryColor);
+  transition: 300ms ease-in-out;
+}
+
+header {
+  background: transparent;
+  grid-area: header;
+  margin: 1rem 0;
+  padding: .2rem 0;
+  text-align: center;
+}
+aside, nav {
+  background: var(--secondaryColor);
+  filter: saturate(50%);
+  transition: 300ms ease-in-out;
+}
+aside.asideLogo {
+    grid-area: asideLogo;
+}
+nav.leftNav {
+  grid-area: leftNav;
+}
+nav.leftNavCorner {
+  grid-area: leftNavCorner;
+  border-top-right-radius: 100%;
+}
+nav.rightNavCorner {
+  grid-area: rightNavCorner;
+  /* border-top-left-radius: 100%; */
+  border-bottom-left-radius: 100%;
+}
+nav.rightNav {
+  grid-area: rightNav;
+}
+aside.themeChanger {
+  grid-area: themeChanger;
+}
+main {
+  grid-area: main;
+  margin: 10px
+}
+
+section {
+  background: var(--primaryColor);
+  color: var(--primaryText);
+  margin: 1rem 0;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  border-radius: 1rem;
+  transition: 300ms ease-in-out;
+}
+
+footer {
+  background: transparent;
+  color: var(--secondaryText);
+  grid-area: footer;
+  margin: 1rem 0;
+  padding: 2rem, 3rem;
+  text-align: center;
+  transition: 300ms ease-in-out;
+}
+
+
+/* Tag Styling */
+header h2 {
+  color: var(--eventActive);
+  transition: 300ms ease-in-out;
+}
+
+main>section {
+  border: 1px solid var(--secondaryText);
+  box-shadow: 1.2rem 1.7rem 1.7rem  rgba(10, 10, 10, .5);
+  transition: 300ms ease-in-out;
+}
+
+footer>div {
+  display: inline-block;
+  text-align: center;
+  width: 49%;
+}
+footer>p {
+  padding: 1rem 0;
+  font-weight: bold;
+}
+/* Class Styling */
+/* Header Styling */
+
+
+
+
+/* Navbar Styling */
+.navList {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.navItem {
+  color: var(--backgroundColor);
+  font-weight: bold;
+  list-style: none;
+  padding: 1rem 1.2rem;
+  transition: 300ms ease-in-out;
+}
+.navItem:hover {
+  background: var(--backgroundColor);
+  color: var(--secondaryColor);
+}
+.navList>.active {
+  background: var(--eventActive);
+  color: var(--secondaryColor);
+}
+
+
+
+
+/* Form Styling */
+fieldset>input {
+  background: var(--backgroundColor);
+  border: 1px solid var(--secondaryColor);
+  border-radius: 1rem;
+  color: var(--secondaryText);
+  margin: .5rem 1rem;
+  padding: .5rem 2rem;
+  text-align: center;
+  width: 35%;
+  transition: 300ms ease-in-out;
+}
+fieldset>input:hover {
+  background: var(--backgroundColor);
+  /* background: lighten(var(--eventActive), 25%); */
+  box-shadow: inset 0 0 .5rem .2rem var(--eventActive);
+}
+/* fieldset>input:active {
+  background: var(--eventActive);
+  box-shadow: inset .05rem .05rem .3rem .01rem var(--eventActive);
+} */
+
+input[type="button"] {
+  background: transparent;
+  border: 2px solid var(--eventActive);
+  border-radius: 1rem;
+  color: var(--eventActive);
+  margin-top: .35em;
+  padding: .5rem 2rem;
+  text-align: center;
+  transition: 300ms ease-in-out;
+  width: 20%;
+}
+input[type="button"]:hover {
+  background: var(--eventActive);
+  border: 2px solid var(--eventActive);
+  border-radius: 1rem;
+  color: var(--primaryColor);
+  padding: .5rem 2rem;
+  text-align: center;
+  width: 20%;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+main>h2 {
+  color: var(--backgroundText);
+  font-size: 2rem;
+  text-align: center;
+  transition: 300ms ease-in-out;
+}
+
+fieldset>input[type="date"] {
+  border: 1px solid var(--secondaryColor);
+  border-radius: 1rem;
+  padding: .35rem 2rem;
+  text-align: center;
+  transition: 300ms ease-in-out;
+  width: 40%;
+}
+
+.horizontal-form {
+  text-align: center;
+}
+
+.horizontal-form>h3, .section-wrapper>h3 {
+  color: var(--secondaryText);
+  margin-top: 1rem;
+  margin-bottom: .2rem;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-style: double;
+  transition: 300ms ease-in-out;
+}
+
+.horizontal-ruler {
+  border-top: 2px solid var(--backgroundColor);
+  margin-top: .2rem;
+  margin-bottom: 1rem;
+  display: block;
+  transition: 300ms ease-in-out;
+}
+
+/* Align */
+.align-content-right {
+  text-align: right;
+}
+
+/* Buttons */
+/* Upload Button */
+.upload-btn {
+  margin-top: 1rem;
+  width: 20%;
+  padding: .5rem 2rem;
+  text-align: center;
+  border: 2px solid var(--eventActive);
+  background: transparent;
+  color: var(--eventActive);
+  border-radius: 1rem;
+  margin-top: 2rem;
+  transition: 300ms ease-in-out;
+}
+
+.upload-btn:hover {
+  width: 20%;
+  padding: .5rem 2rem;
+  text-align: center;
+  border: 2px solid var(--eventActive);
+  background: var(--eventActive);
+  color: var(--primaryColor);
+  border-radius: 1rem;
+}
+
+/* Next Button */
+.next-btn {
+  margin-top: 1rem;
+  width: 20%;
+  padding: .5rem 2rem;
+  text-align: center;
+  border: 2px solid var(--eventAlert);
+  background: transparent;
+  color: var(--eventAlert);
+  border-radius: 1rem;
+  margin-top: 2rem;
+  transition: 300ms ease-in-out;
+}
+
+.next-btn:hover {
+  width: 20%;
+  padding: .5rem 2rem;
+  text-align: center;
+  border: 2px solid var(--eventAlert);;
+  background: var(--eventAlert);;
+  color: var(--primaryColor);;
+  border-radius: 1rem;
+}
+
+/* Theme Changing Button */
+.themeChanger {
+  display: flex;;
+  flex-direction: row-reverse;
+  position: relative;
+}
+
+.themeButton {
+  background: var(--backgroundInverse);
+  border-radius: 50%;
+  display: inline-block;
+  float: right;
+  padding: 15px;
+  position: absolute;
+  align-self: center;
+  /* margin: 1rem 0; */
+  transition: 300ms ease-in-out;
+}
+.blueLightThemeButton {
+    background: #E5F0F9;
+    border: 2px solid #000;
+}
+.moonNightThemeButton {
+    background: #19232D;
+    border: 2px solid #fff;
+    right: 10px;
+}
+.duskThemeButton {
+    background: #DF6668;
+    border: 2px solid #000;
+    right: 20px;
+}
+/* Table Styling */
+table, th, td {
+  border: 1px solid var(--primaryText);
+}
+th, td {
+  padding: .5rem 0;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+th {
+  background: var(--secondaryText);
+  color: var(--secondaryColor);
+  transition: 300ms ease-in-out;
+}
+tbody>tr:hover {
+  background: var(--eventActive);
+}
