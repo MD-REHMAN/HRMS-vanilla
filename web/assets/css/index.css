@@ -1,3 +1,13 @@
+/* RESET */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.container {
+  width: inherit;
+}
+
 /* Variable */
 :root {
   --backgroundColor: #E5F0F9;
@@ -161,72 +171,26 @@ footer>p {
 
 
 
-/* Navbar Styling */
-.navList {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-}
-.navItem {
-  color: var(--backgroundColor);
-  font-weight: bold;
-  list-style: none;
-  padding: 1rem 1.2rem;
-  transition: 300ms ease-in-out;
-}
-.navItem:hover {
-  background: var(--backgroundColor);
-  color: var(--secondaryColor);
-}
-.navList>.active {
-  background: var(--eventActive);
-  color: var(--secondaryColor);
-}
-
-
-
-
 /* Form Styling */
-fieldset>input {
+input.form-control {
   background: var(--backgroundColor);
   border: 1px solid var(--secondaryColor);
-  border-radius: 1rem;
   color: var(--secondaryText);
-  margin: .5rem 1rem;
-  padding: .5rem 2rem;
-  text-align: center;
-  width: 35%;
   transition: 300ms ease-in-out;
 }
-fieldset>input:hover {
-  background: var(--backgroundColor);
-  /* background: lighten(var(--eventActive), 25%); */
-  box-shadow: inset 0 0 .5rem .2rem var(--eventActive);
-}
-/* fieldset>input:active {
-  background: var(--eventActive);
-  box-shadow: inset .05rem .05rem .3rem .01rem var(--eventActive);
-} */
 
-input[type="button"] {
+.submitBtn {
   background: transparent;
   border: 2px solid var(--eventActive);
-  border-radius: 1rem;
   color: var(--eventActive);
-  margin-top: .35em;
-  padding: .5rem 2rem;
   text-align: center;
   transition: 300ms ease-in-out;
-  width: 20%;
 }
-input[type="button"]:hover {
+.submitBtn:hover {
   background: var(--eventActive);
   border: 2px solid var(--eventActive);
-  border-radius: 1rem;
   color: var(--primaryColor);
-  padding: .5rem 2rem;
   text-align: center;
-  width: 20%;
 }
 
 input[type="file"] {
@@ -253,10 +217,8 @@ fieldset>input[type="date"] {
   text-align: center;
 }
 
-.horizontal-form>h3, .section-wrapper>h3 {
+section h3 {
   color: var(--secondaryText);
-  margin-top: 1rem;
-  margin-bottom: .2rem;
   text-align: left;
   text-decoration: underline;
   text-decoration-style: double;
@@ -325,38 +287,7 @@ fieldset>input[type="date"] {
   border-radius: 1rem;
 }
 
-/* Theme Changing Button */
-.themeChanger {
-  display: flex;;
-  flex-direction: row-reverse;
-  position: relative;
-}
 
-.themeButton {
-  background: var(--backgroundInverse);
-  border-radius: 50%;
-  display: inline-block;
-  float: right;
-  padding: 15px;
-  position: absolute;
-  align-self: center;
-  /* margin: 1rem 0; */
-  transition: 300ms ease-in-out;
-}
-.blueLightThemeButton {
-    background: #E5F0F9;
-    border: 2px solid #000;
-}
-.moonNightThemeButton {
-    background: #19232D;
-    border: 2px solid #fff;
-    right: 10px;
-}
-.duskThemeButton {
-    background: #DF6668;
-    border: 2px solid #000;
-    right: 20px;
-}
 /* Table Styling */
 table, th, td {
   border: 1px solid var(--primaryText);

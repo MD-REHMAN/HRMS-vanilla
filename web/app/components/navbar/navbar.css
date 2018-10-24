@@ -1,0 +1,81 @@
+/* Navbar Styling */
+.navList {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+.navItem {
+  align-self: center;
+  color: var(--backgroundColor);
+  font-weight: bold;
+  list-style: none;
+  padding: 1rem 1.2rem;
+  transition: 300ms ease-in-out;
+}
+.navItem:hover, .navItem:focus {
+  background: var(--backgroundColor);
+  color: var(--secondaryColor);
+}
+.navList>.active {
+  background: var(--eventActive);
+  color: var(--secondaryColor);
+}
+.navItem button {
+  background: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* Dropdown Menu */
+.dropdown-menu {
+  background: var(--secondaryColor);
+  border-radius: 0;
+  color: var(--backgroundColor);
+  margin: 0;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+}
+.dropdown-menu > li > a {
+  color: inherit;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background: var(--eventActive);
+  color: var(--secondaryColor);
+}
+
+
+/* Theme Changing Button */
+.themeChanger {
+  display: flex;;
+  flex-direction: row-reverse;
+  position: relative;
+}
+
+.themeButton, .trigger {
+  background: var(--backgroundInverse);
+  border-radius: 50%;
+  display: inline-block;
+  float: right;
+  padding: 15px;
+  position: absolute;
+  align-self: center;
+  /* margin: 1rem 0; */
+  /* transition: 300ms ease-in-out; */
+}
+.trigger {
+  background: var(--backgroundInverse);
+  z-index: 11;
+}
+.blueLightThemeButton, .moonNightThemeButton, .duskThemeButton {
+  align-self: center;
+}
+.blueLightThemeButton {
+    background: #E5F0F9;
+}
+.moonNightThemeButton {
+    background: #19232D;
+}
+.duskThemeButton {
+    background: #DF6668;
+}
