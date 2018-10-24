@@ -2,8 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <h3>Login</h3>
-
+        <h3>Login</h3> 
         <form>
           <div class="form-group">
             <label for="email">Email:</label>

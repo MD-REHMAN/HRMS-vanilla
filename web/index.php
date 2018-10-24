@@ -34,7 +34,7 @@
     <?php include 'app/components/header/header.php'?>
     <?php include 'app/components/navbar/navbar.php'?>
     <main>
-
+      
     </main>
     <?php include 'app/components/footer/footer.php'?>
   </div>
