@@ -1,3 +1,11 @@
+/* Editing Bootstrap CSS */
+.navbar {
+  border: 0 solid transparent;
+  margin-bottom: 0;
+  min-height: auto;
+  z-index: 11;
+}
+
 /* Navbar Styling */
 .navList {
   height: 100%;
@@ -21,10 +29,12 @@
   background: var(--eventActive);
   color: var(--secondaryColor);
 }
-.navItem button {
-  background: transparent;
+.navItem a {
   text-decoration: none;
   color: inherit;
+}
+.navItem a button {
+  background: transparent;
 }
 
 

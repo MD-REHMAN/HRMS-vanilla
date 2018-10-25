@@ -1,10 +1,10 @@
 <aside class="asideLogo">
 
 </aside>
-<nav class="leftNav">
+<nav class="navbar leftNav">
   <ul class="navList">
-    <li class="navItem active"><button value="dashboard" onclick="setView(this)">Dashboard</button></li>
-    <li class="navItem"><a value="addUser" onclick="setView(this)">Add User</a></li>
+    <li class="navItem active"><a><button type="button" onclick="setView(this)" value="app/authentication/login/login.php" >Dashboard</button></a></li>
+    <li class="navItem"><a><button type="button" onclick="setView(this)" value="user" >User</button></a></li>
     <li class="dropdown navItem">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
       <ul class="dropdown-menu">

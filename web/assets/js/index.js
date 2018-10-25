@@ -13,9 +13,10 @@ $(function() {
 });
 function setView(a) {
   // $(this)
-  view = "app/authentication/login/login.php";
-  console.log($(a).val());
-  console.log(view)
+  // view = "app/authentication/login/login.php";
+  view = $(a).val();
+  // console.log($(a).val());
+  console.log(view);
 
     $("main").load(view);
 }
