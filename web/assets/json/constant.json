@@ -1,0 +1,9 @@
+{
+  "constant": {
+    "branch": ["null", "Dvelopment", "Management"],
+    "department": ["null", "Development", "Testing", "Management"],
+    "leaveStatus": ["null", "approved", "pending", "rejected", "cancelled"],
+    "leaveType": ["null", "Casual Leave", "Medical Leave"],
+    "role": ["null", "Developer", "TeamLead", "HR", "Manager"]
+  }
+}
