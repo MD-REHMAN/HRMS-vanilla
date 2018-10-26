@@ -24,8 +24,7 @@
   <script src="app/components/header/header.js" charset="utf-8"></script>
   <script src="app/components/navbar/navbar.js" charset="utf-8"></script>
 
-  <script src="app/authentication/login/login.js" charset="utf-8"></script>
-  <script src="app/user/user.js" charset="utf-8"></script>
+
 
   <script src="app/components/footer/footer.js" charset="utf-8"></script>
 </head>
@@ -34,7 +33,23 @@
     <?php include 'app/components/header/header.php'?>
     <?php include 'app/components/navbar/navbar.php'?>
     <main>
-      
+      <?php
+        $pageName = "login";
+        $pageName = $_REQUEST['page'];
+        switch ($pageName) {
+          case 'dashboard':
+            include 'app/dashboard/dashboard.php';
+            break;
+          case 'addUser':
+            include 'app/user/addUser.php';
+            break;
+          case 'login':
+            include 'app/authentication/login/login.php';
+            break;
+          default:
+            break;
+        }
+      ?>
     </main>
     <?php include 'app/components/footer/footer.php'?>
   </div>

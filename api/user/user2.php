@@ -4,7 +4,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$method = $_SERVER['REQUEST_METHOD'];
+// $method = $_SERVER['REQUEST_METHOD'];
 $data=json_decode(file_get_contents("php://input"));
 
 function post($data, $conn) {
@@ -13,7 +13,7 @@ function post($data, $conn) {
   // echo "It's POST <br>";
   if($conn->query($sql) === TRUE) {
     $resdata= array();
-    $data->filter = "where email='".$data->email."'";
+    $data->Filter = "where email='".$data->email."'";
     echo get($data, $conn);
     // echo'{"status": "OK","data":'.json_encode($resdata).'}';
     return true;
@@ -24,7 +24,7 @@ function post($data, $conn) {
 }
 
 function get($data, $conn) {
-  $sql = "SELECT * FROM user $data->filter";
+  $sql = "SELECT * FROM user $data->Filter";
   // echo "It's GET <br>";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
@@ -44,25 +44,29 @@ function get($data, $conn) {
 
 
 
-switch ($data->method) {
-  case 'PUT':
-  break;
-  case 'REGISTER':
-    $data->filter = "where email='".$data->email."'";
+switch ($data->Operation) {
+  case 'GetUser':
+    echo get($data, $conn);
+    break;
+  case 'PostUser':
+    post($data, $conn);
+    break;
+  case 'UpdateUser':
+    break;
+  case 'Login':
+    $data->Filter = "where email='".$data->email."' AND password='".$data->password."'";
+    echo get($data, $conn);
+    break;
+  case 'Register':
+    $data->Filter = "where email='".$data->email."'";
     if(get($data, $conn)) {
       echo "User already exits";
     } else {
       post($data, $conn);
     }
-  break;
-  case 'POST':
-    post($data, $conn);
-    break;
-  case 'GET':
-    echo get($data, $conn);
     break;
   default:
-    echo "Please enter a valid Method";
+    echo "Please enter a valid Operation";
     break;
 }
 $conn->close();

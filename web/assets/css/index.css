@@ -1,8 +1,27 @@
+@font-face {
+font-family: "Audrey-Bold";
+src: url("../fonts/Audrey/Audrey/Audrey-Bold.otf");
+}
+@font-face {
+font-family: "Audrey-Medium";
+src: url("../fonts/Audrey/Audrey/Audrey-Medium.otf");
+}
+@font-face {
+font-family: "Audrey-Normal";
+src: url("../fonts/Audrey/Audrey/Audrey-Normal.otf");
+}
 /* RESET */
 * {
   padding: 0;
   margin: 0;
   border: 0;
+}
+a, p, label {
+  font-family:Audrey-Normal;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family:Audrey-Medium;
+  text-transform: capitalize;
 }
 .container {
   width: inherit;
@@ -217,11 +236,9 @@ fieldset>input[type="date"] {
   text-align: center;
 }
 
-section h3 {
-  color: var(--secondaryText);
-  text-align: left;
-  text-decoration: underline;
-  text-decoration-style: double;
+section h4 {
+  color: var(--eventActive);
+  text-align: center;
   transition: 300ms ease-in-out;
 }
 

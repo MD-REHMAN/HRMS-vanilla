@@ -3,8 +3,9 @@
 </aside>
 <nav class="navbar leftNav">
   <ul class="navList">
-    <li class="navItem active"><a><button type="button" onclick="setView(this)" value="app/authentication/login/login.php" >Dashboard</button></a></li>
-    <li class="navItem"><a><button type="button" onclick="setView(this)" value="user" >User</button></a></li>
+    <li class="navItem active"><a href="index.php?page=dashboard">Dashboard</a></li>
+    <li class="navItem"><a href="index.php?page=login">Login</a></</li>
+    <li class="navItem"><a href="index.php?page=addUser">User</a></</li>
     <li class="dropdown navItem">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
       <ul class="dropdown-menu">

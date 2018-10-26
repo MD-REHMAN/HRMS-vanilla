@@ -1,6 +1,7 @@
 /* Editing Bootstrap CSS */
 .navbar {
   border: 0 solid transparent;
+  border-radius: 0;
   margin-bottom: 0;
   min-height: auto;
   z-index: 11;

@@ -1,4 +1,9 @@
-.login {
+/* .login {
   width: 40%;
   margin: 3rem auto;
+} */
+
+.login h4 {
+  margin-top: 0;
+  color: var(--eventActive);
 }
