@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>HRMS</title>
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="module/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/module/bootstrap/css/bootstrap.css">
+
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="app/components/header/header.css">
@@ -16,17 +17,30 @@
   <link rel="stylesheet" href="app/user/user.css">
 
   <link rel="stylesheet" href="app/components/footer/footer.css">
-  <!-- Scripts -->
+  <!-- ReqireJS -->
+  <script src="assets/js/require.js" charset="utf-8"></script>
+  <script src="assets/js/config.js" charset="utf-8"></script>
+  <script>
+    // require(['main'], function() {
+    //   console.log("Index - jquery, bootstrap, main");
+    // });
+    // requirejs(['jquery'], function( $ ) {
+    //   console.log( $ ) // OK
+    // });
+  </script>
+
+<!--
+  Scripts
   <script src="module/jquery/dist/jquery.js" charset="utf-8"></script>
   <script src="module/bootstrap/js/bootstrap.js" charset="utf-8"></script>
-  <!-- Custom Scripts -->
+  Custom Scripts
   <script src="assets/js/index.js" charset="utf-8"></script>
+
   <script src="app/components/header/header.js" charset="utf-8"></script>
   <script src="app/components/navbar/navbar.js" charset="utf-8"></script>
 
-
-
   <script src="app/components/footer/footer.js" charset="utf-8"></script>
+-->
 </head>
 <body>
   <div class="grid-wrapper">
@@ -41,6 +55,9 @@
             include 'app/dashboard/dashboard.php';
             break;
           case 'addUser':
+            include 'app/user/addUser.php';
+            break;
+          case 'userList':
             include 'app/user/userList.php';
             break;
           case 'login':

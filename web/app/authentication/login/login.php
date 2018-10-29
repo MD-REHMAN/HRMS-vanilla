@@ -1,3 +1,14 @@
+<script type="text/javascript">
+  require(['authCtrl'], function() {
+    console.log("Login - authCtrl");
+  });
+  // require(['config'], function() {
+  //   console.log("Index - config");
+  //   require(['authCtrl'], function() {
+  //     console.log("Auth - dsadad");
+  //   });
+  // });
+</script>
 <div class="col-xs-3 col-md-4 col-lg-5"></div>
 <section class="col-xs-6 col-md-4 col-lg-2 login">
   <div class="container-fluid">
@@ -23,4 +34,3 @@
   </div>
 </section>
 <div class="col-xs-3 col-md-4 col-lg-5"></div>
-<script src="app/authentication/login/login.js" charset="utf-8"></script>

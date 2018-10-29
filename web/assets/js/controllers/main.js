@@ -1,17 +1,18 @@
-$(function() {
+define(['jquery'], function( $ ) {
+  $(function() {
 
-  // Getting JSON Constants
-  $.getJSON( "assets/json/constant.json", function( data ) {
-    // Setting Constant in LocalStorage
-    localStorage.setItem("constant", JSON.stringify(data.constant));
-    // Getting Constant from LocalStorage
-    var _constant = JSON.parse(localStorage.getItem('constant'));
+    // Getting JSON Constants
+    $.getJSON( "assets/json/constant.json", function( data ) {
+      // Setting Constant in LocalStorage
+      localStorage.setItem("constant", JSON.stringify(data.constant));
+      // Getting Constant from LocalStorage
+      var _constant = JSON.parse(localStorage.getItem('constant'));
+    });
+
+
   });
-
-
-
-
 });
+
 
 
 

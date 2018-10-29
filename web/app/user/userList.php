@@ -1,3 +1,8 @@
+<script type="text/javascript">
+  require(['userCtrl'], function() {
+    console.log("userList - userCtrl");
+  });
+</script>
 <br>
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -29,4 +34,3 @@
     <a href="list.html" class="next-btn">Next</a>
   </div> -->
 </section>
-<script src="app/user/user.js" charset="utf-8"></script>

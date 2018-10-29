@@ -1,3 +1,8 @@
+<script type="text/javascript">
+  require(['componentsCtrl'], function() {
+    console.log("navbar - componentsCtrl");
+  });
+</script>
 <aside class="asideLogo">
 
 </aside>
