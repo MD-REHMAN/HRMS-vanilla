@@ -1,6 +1,12 @@
 $(function(){
   // Variable Declaration
   var selectItem = {};
+  var tableData = {};
+  var tableHtmlData = "";
+  var listData = {
+    Filter: "",
+    Operation: "GetUser"
+  }
   var userData = {
     firstName: "",
     lastName: "",
@@ -78,6 +84,35 @@ $(function(){
     });
     // userData.firstName = $("input[name=firstName]")
   });
+
+
+
+  // UserList
+  function createTableStructure() {
+    for (i=0; i<tableData.length; i++) {
+      tableHtmlData = tableHtmlData + "<tr><td>" + tableData[i].id + "</td><td>" + tableData[i].firstName + "</td><td>" + tableData[i].lastName + "</td><td>" + tableData[i].email +"</td><td>" + tableData[i].telNumber + "</td></tr>";
+    }
+    $("tbody").append(tableHtmlData);
+  }
+  // Getting User
+  listData = JSON.stringify(listData);
+  $.ajax({
+    method: "POST",
+    url: "http://localhost/Project/HRMS v1.0/api/user/user2.php",
+    data: listData,
+    dataType: "json"
+  })
+  .done(function(data) {
+    console.log(data);
+    tableData = data;
+    createTableStructure();
+  })
+  .fail(function() {
+    console.log("Incorrect email or password");
+  });
+
+
+
 
 
 });

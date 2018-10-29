@@ -41,7 +41,7 @@
             include 'app/dashboard/dashboard.php';
             break;
           case 'addUser':
-            include 'app/user/addUser.php';
+            include 'app/user/userList.php';
             break;
           case 'login':
             include 'app/authentication/login/login.php';

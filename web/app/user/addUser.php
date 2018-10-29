@@ -1,55 +1,3 @@
-<!-- <section class="addUser">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-
-          <form class="form-inline" name="myForm">
-            <div class="horizontal-form">
-              <h4>Login</h4>
-                <div class="form-group">
-                  <label for="firstName">First Name:</label>
-                  <input type="text" class="form-control" placeholder="First Name" name="firstName" required>
-                </div>
-                <div class="form-group">
-                  <label for="lastName">Last Name:</label>
-                  <input type="text" class="form-control" laceholder="Last Name" name="lastName" required>
-                </div><br><br>
-                <div class="form-group">
-                  <label for="email">Email:</label>
-                  <input type="email" class="form-control" placeholder="Enter email" name="email" required>
-                </div>
-                <div class="form-group">
-                  <label for="pwd">Password:</label>
-                  <input type="password" class="form-control" laceholder="Enter password" name="password" required>
-                </div><br><br>
-                <div class="form-group">
-                  <label for="email">Email:</label>
-                  <input type="email" class="form-control" placeholder="Enter email" name="email" required>
-                </div>
-                <div class="form-group">
-                  <label for="pwd">Password:</label>
-                  <input type="password" class="form-control" laceholder="Enter password" name="password" required>
-                </div><br><br>
-                <div class="checkbox">
-                  <label><input type="checkbox" name="remember"> Remember me</label>
-                </div><br><br>
-                <button class="btn btn-default submitBtn">Submit</button>
-              <h3>Resume</h3>
-              <span class="horizontal-ruler"></span>
-              <label class="upload-btn"> Upload Resume
-                <input type="file">
-              </label>
-              <h3>Declaration</h3>
-              <span class="horizontal-ruler"></span>
-              <input type="checkbox" name="agree" value="agree"> I here by declare that above information is correct.
-              <br><br>
-              <button class="btn btn-default submitBtn">Submit</button>
-            </div>
-          </form>
-      </div>
-    </div>
-  </div>
-</section> -->
 <br>
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -119,21 +67,21 @@
                                 <div class="col-md-4">
                                     <div class="col-md-11">
                                         <select class="form-control" name="branch" required>
-                                          <option value="" disabled>Branch</option>
+                                          <option value="" selected disabled>Branch</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="col-md-11">
                                         <select class="form-control" name="department" required>
-                                          <option value="" disabled>Department</option>
+                                          <option value="" selected disabled>Department</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="col-md-11">
                                         <select class="form-control" name="role" required>
-                                          <option value="" disabled>Role</option>
+                                          <option value="" selected disabled>Role</option>
                                         </select>
                                     </div>
                                 </div>
