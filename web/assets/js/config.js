@@ -4,6 +4,7 @@ requirejs.config({
   paths: {
     'jquery': 'module/jquery/dist/jquery',
     'bootstrap': 'module/bootstrap/js/bootstrap',
+    'handlebars': 'module/handlebars/handlebars-v4.0.12',
     'main': 'controllers/main',
     'authCtrl': 'controllers/authCtrl',
     'componentsCtrl': 'controllers/componentsCtrl',
@@ -11,11 +12,9 @@ requirejs.config({
   },
   shim: {
     'bootstrap': ['jquery'],
-    'main': ['jquery', 'bootstrap'],
-    'authCtrl': ['main'],
+    'main': ['jquery', 'bootstrap', 'handlebars'],
     'componentsCtrl': ['main'],
-    'userCtrl': ['main']
+    'authCtrl': ['componentsCtrl'],
+    'userCtrl': ['componentsCtrl']
   }
 });
-
-console.log(requirejs.config.paths);

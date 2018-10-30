@@ -1,5 +1,8 @@
 define(['jquery'], function( $ ) {
   $(function() {
+    // Variable Declaration
+
+
 
     // Getting JSON Constants
     $.getJSON( "assets/json/constant.json", function( data ) {
@@ -8,6 +11,26 @@ define(['jquery'], function( $ ) {
       // Getting Constant from LocalStorage
       var _constant = JSON.parse(localStorage.getItem('constant'));
     });
+    switch (window.location.search) {
+      case '?page=login':
+        require(['authCtrl'], function() {
+          console.log("login - userCauthCtrltrl");
+        });
+        break;
+      case '?page=addUser':
+        require(['userCtrl'], function() {
+          console.log("addUser - userCtrl");
+        });
+        break;
+      case '?page=userList':
+        require(['userCtrl'], function() {
+          console.log("userList - userCtrl");
+        });
+        break;
+      default:
+    }
+
+
 
 
   });

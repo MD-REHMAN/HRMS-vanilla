@@ -1,8 +1,10 @@
-define(['jquery'], function($) {
+define(['jquery', 'handlebars'], function($, Handlebars) {
   $(function() {
     // Variable Declaration
-
-
+    var loggedUser;
+    var handlebars_navbar = $("#handlebars-navbar").html();
+    var handlebarsScript;
+    var compiled_handlebarsScript;
     // Theme Changer
     $(".moonNightThemeButton").click(function () {
       $("html").removeClass().addClass("moonNight");
@@ -33,14 +35,34 @@ define(['jquery'], function($) {
     });
 
 
+    // Logout Functionality
+    console.log($(".logoutLink").parent());
+    $(".grid-wrapper").on('click', '.logoutLink', function() {
+      localStorage.removeItem("loggedUser");
+      console.log("User Logout");
+      // setNavbar();
+      window.location.search = '?page=login'
+    });
 
-    // $(".blueLightThemeButton").mouseenter(function () {
-    //   $(".moonNightThemeButton").animate({right: "35px"}, {queue: false, duration: 300});
-    //   $(".duskThemeButton").animate({right: "70px"}, {queue: false, duration: 300});
+    // User Name
+    // $(".rightNav").find(".navItem").click(function() {
+    //   console.log(this);
+    //   this.innerHTML = "";
+    //   $(this).css({"height": "4rem", "width": "4rem"});
+    //   // $(this).animate({})
     // });
-    // $(".themeChanger").mouseleave(function () {
-    //   $(".duskThemeButton").animate({right: "20px"});
-    //   $(".moonNightThemeButton").animate({right: "10px"});
-    // });
+    // console.log("New Test");
+    // console.log($(handlebars_navbar).html());
+    setNavbar();
+    function setNavbar() {
+      loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
+      handlebarsScript = $(handlebars_navbar).html();
+      compiled_handlebarsScript = Handlebars.compile(handlebarsScript);
+      // console.log(compiled_handlebarsScript({firstName: "Tony"}));
+      // $(".grid-wrapper").prepend(compiled_handlebarsScript({firstName: "Tony"}));
+      console.log(loggedUser);
+      $(".grid-wrapper").prepend(compiled_handlebarsScript(loggedUser));
+    }
+
   });
 })

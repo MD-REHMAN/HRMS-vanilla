@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="assets/css/module/bootstrap/css/bootstrap.css">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="app/components/header/header.css">
   <link rel="stylesheet" href="app/components/navbar/navbar.css">
 
@@ -17,17 +17,10 @@
   <link rel="stylesheet" href="app/user/user.css">
 
   <link rel="stylesheet" href="app/components/footer/footer.css">
-  <!-- ReqireJS -->
+  <!-- RequireJS -->
   <script src="assets/js/require.js" charset="utf-8"></script>
   <script src="assets/js/config.js" charset="utf-8"></script>
-  <script>
-    // require(['main'], function() {
-    //   console.log("Index - jquery, bootstrap, main");
-    // });
-    // requirejs(['jquery'], function( $ ) {
-    //   console.log( $ ) // OK
-    // });
-  </script>
+  <!-- <script src="assets/js/module/handlebars/handlebars-v4.0.12.js" charset="utf-8"></script> -->
 
 <!--
   Scripts

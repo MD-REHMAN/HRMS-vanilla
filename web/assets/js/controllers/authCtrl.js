@@ -1,4 +1,4 @@
-define(['jquery'], function($) {
+define(['jquery', 'componentsCtrl'], function($, Components) {
 
   $(function() {
     // Varible Declaration
@@ -30,12 +30,13 @@ define(['jquery'], function($) {
       loginData = JSON.stringify(loginData);
       $.ajax({
         method: "POST",
-        url: "http://localhost/Project/HRMS v1.0/api/user/user2.php",
+        url: "http://localhost/Project/HRMS v1.0/api/user/user3.php",
         data: loginData,
         dataType: "json"
       })
       .done(function(data) {
-        console.log("welcome");
+        localStorage.setItem("loggedUser", JSON.stringify(data[0]));
+        // Components.setNavbar();
         window.location.href="index.php?page=dashboard";
       })
       .fail(function() {

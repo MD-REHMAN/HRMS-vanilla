@@ -1,8 +1,3 @@
-<script type="text/javascript">
-  require(['userCtrl'], function() {
-    console.log("userList - userCtrl");
-  });
-</script>
 <br>
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -34,3 +29,14 @@
     <a href="list.html" class="next-btn">Next</a>
   </div> -->
 </section>
+<script id="handlebars-userList" type="text/x-handlebars-template">
+  {{#each .}}
+  <tr>
+    <td>{{id}}</td>
+    <td>{{firstName}}</td>
+    <td>{{lastName}}</td>
+    <td>{{email}}</td>
+    <td>{{telNumber}}</td>
+  </tr>
+  {{/each}}
+</script>

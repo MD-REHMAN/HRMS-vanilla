@@ -1,4 +1,4 @@
-define(['jquery'], function($) {
+define(['jquery', 'handlebars'], function($, Handlebars) {
   $(function() {
     // Variable Declaration
     var setCtrl = window.location.search;
@@ -98,6 +98,15 @@ define(['jquery'], function($) {
           }
           $("tbody").append(tableHtmlData);
         }
+        function createTableStructure_handlebars() {
+          handlebarsScript = $('#handlebars-userList').html();
+          // console.log($('#handlebars-userList').html());
+          compiled_handlebarsScript = Handlebars.compile(handlebarsScript);
+          //   console.log(tableData);
+          //   console.log(compiled_handlebarsScript);
+          // console.log(compiled_handlebarsScript(tableData));
+          $("tbody").append(compiled_handlebarsScript(tableData));
+        }
         // Getting User
         listData = JSON.stringify(listData);
         $.ajax({
@@ -109,7 +118,8 @@ define(['jquery'], function($) {
           .done(function(data) {
             // console.log(data);
             tableData = data;
-            createTableStructure();
+            // createTableStructure();
+            createTableStructure_handlebars();
           })
           .fail(function() {
             console.log("Incorrect email or password");

@@ -114,8 +114,8 @@ header {
 }
 aside, nav {
   background: var(--secondaryColor);
-  filter: saturate(50%);
   transition: 300ms ease-in-out;
+  height: 4rem;
 }
 aside.asideLogo {
     grid-area: asideLogo;
@@ -311,12 +311,14 @@ table, th, td {
 }
 th, td {
   padding: .5rem 0;
+  text-align: center;
 }
 table {
   border-collapse: collapse;
   width: 100%;
   text-align: center;
 }
+
 th {
   background: var(--secondaryText);
   color: var(--secondaryColor);
