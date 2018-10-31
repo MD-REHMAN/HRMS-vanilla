@@ -34,12 +34,12 @@ function put($data, $conn) {
 }
 
 function post($data, $conn) {
-  $sql = "INSERT INTO leaveRequest (leaveType, reason, dateFrom, dateTo, numOfDays, status, isActive, createdBy, updatedBy)
-  VALUES ('$data->leaveType', '$data->reason', '$data->dateFrom', '$data->dateTo', '$data->numOfDays', $data->isActive, $data->createdBy, $data->updatedBy)";
+  $sql = "INSERT INTO leaveRequest (leaveType, reason, dateFrom, dateTo, numOfDays, status, createdBy, updatedBy)
+  VALUES ('$data->leaveType', '$data->reason', '$data->dateFrom', '$data->dateTo', '$data->numOfDays', '$data->status', $data->createdBy, $data->createdBy)";
   // echo "It's POST <br>";
   if($conn->query($sql) === TRUE) {
     $resdata= array();
-    $data->Filter = "where email='".$data->email."'";
+    // $data->Filter = "where email='".$data->email."'";
     echo get($data, $conn);
     // echo'{"status": "OK","data":'.json_encode($resdata).'}';
     return true;
@@ -82,6 +82,9 @@ switch ($data->Operation) {
     // $data->Filter = "where id='".$data->leaveRequestId."'";
     // $data->setField = "status = ".$data->status.", updatedBy = ".$data->updatedBy.""; // lot more
     // put($data, $conn);
+    break;
+  case 'RequestLeave':
+    post($data, $conn);
     break;
   case 'MyLeaveRequest':
     $data->Filter = "where createdBy='".$data->userId."'";

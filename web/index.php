@@ -20,20 +20,7 @@
   <!-- RequireJS -->
   <script src="assets/js/require.js" charset="utf-8"></script>
   <script src="assets/js/config.js" charset="utf-8"></script>
-  <!-- <script src="assets/js/module/handlebars/handlebars-v4.0.12.js" charset="utf-8"></script> -->
 
-<!--
-  Scripts
-  <script src="module/jquery/dist/jquery.js" charset="utf-8"></script>
-  <script src="module/bootstrap/js/bootstrap.js" charset="utf-8"></script>
-  Custom Scripts
-  <script src="assets/js/index.js" charset="utf-8"></script>
-
-  <script src="app/components/header/header.js" charset="utf-8"></script>
-  <script src="app/components/navbar/navbar.js" charset="utf-8"></script>
-
-  <script src="app/components/footer/footer.js" charset="utf-8"></script>
--->
 </head>
 <body>
   <div class="grid-wrapper">
@@ -52,6 +39,18 @@
             break;
           case 'userList':
             include 'app/user/userList.php';
+            break;
+          case 'addPaySlip':
+            include 'app/paySlip/addPaySlip.php';
+            break;
+          case 'paySlipList':
+            include 'app/paySlip/paySlipList.php';
+            break;
+          case 'addLeaveRequest':
+            include 'app/leaveRequest/addLeaveRequest.php';
+            break;
+          case 'leaveRequestList':
+            include 'app/leaveRequest/leaveRequestList.php';
             break;
           case 'login':
             include 'app/authentication/login/login.php';

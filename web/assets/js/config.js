@@ -8,13 +8,18 @@ requirejs.config({
     'main': 'controllers/main',
     'authCtrl': 'controllers/authCtrl',
     'componentsCtrl': 'controllers/componentsCtrl',
-    'userCtrl': 'controllers/userCtrl'
+    'userCtrl': 'controllers/userCtrl',
+    'leaveRequestCtrl': 'controllers/leaveRequestCtrl',
+    'paySlipCtrl': 'controllers/paySlipCtrl'
+
   },
   shim: {
     'bootstrap': ['jquery'],
     'main': ['jquery', 'bootstrap', 'handlebars'],
     'componentsCtrl': ['main'],
     'authCtrl': ['componentsCtrl'],
-    'userCtrl': ['componentsCtrl']
+    'userCtrl': ['componentsCtrl'],
+    'leaveRequestCtrl': ['componentsCtrl'],
+    'paySlipCtrl': ['componentsCtrl']
   }
 });

@@ -27,6 +27,26 @@ define(['jquery'], function( $ ) {
           console.log("userList - userCtrl");
         });
         break;
+      case '?page=addLeaveRequest':
+        require(['leaveRequestCtrl'], function() {
+          console.log("addLeaveRequest - leaveRequestCtrl");
+        });
+        break;
+      case '?page=leaveRequestList':
+        require(['leaveRequestCtrl'], function() {
+          console.log("leaveRequestList - leaveRequestCtrl");
+        });
+        break;
+      case '?page=addPaySlip':
+        require(['paySlipCtrl'], function() {
+          console.log("addPaySlip - paySlipCtrl");
+        });
+        break;
+      case '?page=paySlipList':
+        require(['paySlipCtrl'], function() {
+          console.log("paySlipList - paySlipCtrl");
+        });
+        break;
       default:
     }
 

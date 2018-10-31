@@ -66,7 +66,7 @@ switch ($data->Operation) {
     break;
   case 'Login':
     $data->Filter = "where email='".$data->email."' AND password='".$data->password."'";
-    $data->Field = "email, firstName, lastName";
+    $data->Field = "id, email, firstName, lastName";
     echo get($data, $conn);
     break;
   case 'Register':

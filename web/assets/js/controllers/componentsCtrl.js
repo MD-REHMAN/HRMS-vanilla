@@ -36,7 +36,7 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
 
 
     // Logout Functionality
-    console.log($(".logoutLink").parent());
+    // console.log($(".logoutLink").parent());
     $(".grid-wrapper").on('click', '.logoutLink', function() {
       localStorage.removeItem("loggedUser");
       console.log("User Logout");
@@ -60,7 +60,7 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
       compiled_handlebarsScript = Handlebars.compile(handlebarsScript);
       // console.log(compiled_handlebarsScript({firstName: "Tony"}));
       // $(".grid-wrapper").prepend(compiled_handlebarsScript({firstName: "Tony"}));
-      console.log(loggedUser);
+      // console.log(loggedUser);
       $(".grid-wrapper").prepend(compiled_handlebarsScript(loggedUser));
     }
 

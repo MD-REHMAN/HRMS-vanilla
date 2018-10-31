@@ -24,7 +24,7 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
     var _constant = JSON.parse(localStorage.getItem('constant'));
 
     switch (setCtrl) {
-      case '?page=addUser':
+      case '?page=addPaySlip':
         // Add User Controller
         // Select element are filled
         var branch = $('select[name=branch]');
@@ -76,7 +76,7 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
           console.log(userData);
           $.ajax({
               method: "POST",
-              url: "http://localhost/Project/HRMS v1.0/api/user/user3.php",
+              url: "http://localhost/Project/HRMS v1.0/api/user/user2.php",
               data: userData,
               dataType: "json"
             })
@@ -90,7 +90,7 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
           // userData.firstName = $("input[name=firstName]")
         });
         break;
-      case '?page=userList':
+      case '?page=paySlipList':
         // UserList List
         function createTableStructure() {
           for (i = 0; i < tableData.length; i++) {
