@@ -1,0 +1,30 @@
+<thead>
+  <tr>
+    <!-- <th>#</th> -->
+    <th>ID</th>
+    <th>Leave Type</th>
+    <th>Applicant</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Number Of Days</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+</thead>
+<tbody>
+  {{#each .}}
+    <tr>
+      <!-- <td>{{@key}}</td> -->
+      <td>{{id}}</td>
+      <td>{{leaveType}}</td>
+      <td>{{createdBy}}</td>
+      <td>{{dateFrom}}</td>
+      <td>{{dateTo}}</td>
+      <td>{{numOfDays}}</td>
+      <td>{{status}}</td>
+      <td>
+        <a href="#" class="approveBtn" value={{@key}}>Approve</a> / <a href="#" onclick="blah()">Reject</a>
+      </td>
+    </tr>
+  {{/each}}
+</tbody>

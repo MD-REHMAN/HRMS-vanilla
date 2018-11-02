@@ -1,4 +1,4 @@
-define(['jquery', 'handlebars'], function($, Handlebars) {
+define(['jquery'], function($) {
   $(function() {
     // Variable Declaration
     var loggedUser;
@@ -56,13 +56,15 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
     setNavbar();
     function setNavbar() {
       loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
-      handlebarsScript = $(handlebars_navbar).html();
-      compiled_handlebarsScript = Handlebars.compile(handlebarsScript);
-      // console.log(compiled_handlebarsScript({firstName: "Tony"}));
+      // handlebarsScript = $(handlebars_navbar).html();
+      // compiled_handlebarsScript = Handlebars.compile(handlebarsScript);
+      compiled_handlebarsScript = Handlebars.templates['navbar-template'](loggedUser);
+      // console.log(compiled_handlebarsScript({firstName: "Batman"}));
       // $(".grid-wrapper").prepend(compiled_handlebarsScript({firstName: "Tony"}));
       // console.log(loggedUser);
-      $(".grid-wrapper").prepend(compiled_handlebarsScript(loggedUser));
+      // console.log(compiled_handlebarsScript);
+      $(".grid-wrapper").prepend(compiled_handlebarsScript);
     }
 
   });
-})
+});

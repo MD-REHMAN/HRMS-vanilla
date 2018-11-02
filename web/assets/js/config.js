@@ -4,22 +4,26 @@ requirejs.config({
   paths: {
     'jquery': 'module/jquery/dist/jquery',
     'bootstrap': 'module/bootstrap/js/bootstrap',
-    'handlebars': 'module/handlebars/handlebars-v4.0.12',
+
     'main': 'controllers/main',
     'authCtrl': 'controllers/authCtrl',
     'componentsCtrl': 'controllers/componentsCtrl',
     'userCtrl': 'controllers/userCtrl',
     'leaveRequestCtrl': 'controllers/leaveRequestCtrl',
-    'paySlipCtrl': 'controllers/paySlipCtrl'
+    'paySlipCtrl': 'controllers/paySlipCtrl',
+
+    'navbar-template': 'template/navbar-template',
+    'user-template': 'template/user-template',
+    'leaveRequest-template': 'template/leaveRequest-template'
 
   },
   shim: {
     'bootstrap': ['jquery'],
-    'main': ['jquery', 'bootstrap', 'handlebars'],
-    'componentsCtrl': ['main'],
+    'main': ['jquery', 'bootstrap'],
+    'componentsCtrl': ['main', 'navbar-template'],
     'authCtrl': ['componentsCtrl'],
-    'userCtrl': ['componentsCtrl'],
-    'leaveRequestCtrl': ['componentsCtrl'],
+    'userCtrl': ['componentsCtrl', 'user-template'],
+    'leaveRequestCtrl': ['componentsCtrl', 'leaveRequest-template'],
     'paySlipCtrl': ['componentsCtrl']
   }
 });

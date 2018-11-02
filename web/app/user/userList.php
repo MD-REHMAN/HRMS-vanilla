@@ -11,18 +11,6 @@
 <section class="userList">
   <div class="container">
     <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Tel Number</th>
-        </tr>
-      </thead>
-      <tbody>
-
-      </tbody>
     </table>
   </div>
   <!-- <div class="align-content-right">

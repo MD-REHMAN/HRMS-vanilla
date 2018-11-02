@@ -1,4 +1,4 @@
-define(['jquery', 'componentsCtrl'], function($, Components) {
+define(['jquery'], function($) {
 
   $(function() {
     // Varible Declaration

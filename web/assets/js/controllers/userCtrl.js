@@ -1,4 +1,4 @@
-define(['jquery', 'handlebars'], function($, Handlebars) {
+define(['jquery'], function($) {
   $(function() {
     // Variable Declaration
     var setCtrl = window.location.search;
@@ -99,19 +99,21 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
           $("tbody").append(tableHtmlData);
         }
         function createTableStructure_handlebars() {
-          handlebarsScript = $('#handlebars-userList').html();
+          // handlebarsScript = $('#handlebars-userList').html();
           // console.log($('#handlebars-userList').html());
-          compiled_handlebarsScript = Handlebars.compile(handlebarsScript);
+          // compiled_handlebarsScript = Handlebars.compile(handlebarsScript);
+          compiled_handlebarsScript = Handlebars.templates['user-template'](tableData);
           //   console.log(tableData);
           //   console.log(compiled_handlebarsScript);
           // console.log(compiled_handlebarsScript(tableData));
-          $("tbody").append(compiled_handlebarsScript(tableData));
+          // $("tbody").append(compiled_handlebarsScript(tableData));
+          $("table").append(compiled_handlebarsScript);
         }
         // Getting User
         listData = JSON.stringify(listData);
         $.ajax({
             method: "POST",
-            url: "http://localhost/Project/HRMS v1.0/api/user/user2.php",
+            url: "http://localhost/Project/HRMS v1.0/api/user/user3.php",
             data: listData,
             dataType: "json"
           })

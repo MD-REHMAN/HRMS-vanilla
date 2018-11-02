@@ -1,6 +1,6 @@
-define(['jquery', 'handlebars'], function($, Handlebars) {
+define(['jquery'], function($) {
   $(function() {
-    console.log("I'm working");
+    // console.log("I'm working");
     // Getting Constant from LocalStorage
     var _constant = JSON.parse(localStorage.getItem('constant'));
     var _loggedUser = JSON.parse(localStorage.getItem('loggedUser'));
@@ -19,6 +19,10 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
       dateFrom: "",
       dateTo: "",
       numOfDays: ""
+    };
+    var statusData = {
+      Operation: "ManageLeaveRequest",
+      updatedBy: _loggedUser.id
     };
 
 
@@ -86,15 +90,18 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
       case '?page=leaveRequestList':
         // UserList List
         function createTableStructure_handlebars() {
-          handlebarsScript = $('#handlebars-userList').html();
-          compiled_handlebarsScript = Handlebars.compile(handlebarsScript);
-          $("tbody").append(compiled_handlebarsScript(tableData));
+          // handlebarsScript = $('#handlebars-userList').html();
+          // compiled_handlebarsScript = Handlebars.compile(handlebarsScript);
+          // $("table").append(compiled_handlebarsScript(tableData));
+          tableData.role = 1;
+          compiled_handlebarsScript = Handlebars.templates['leaveRequest-template'](tableData);
+          $("table").append(compiled_handlebarsScript);
         }
         // Getting User
         listData = JSON.stringify(listData);
         $.ajax({
             method: "POST",
-            url: "http://localhost/Project/HRMS v1.0/api/user/user2.php",
+            url: "http://localhost/Project/HRMS v1.0/api/leaveRequest/leaveRequest.php",
             data: listData,
             dataType: "json"
           })
@@ -106,6 +113,31 @@ define(['jquery', 'handlebars'], function($, Handlebars) {
           .fail(function() {
             console.log("Incorrect email or password");
           });
+
+          // Accept and Reject Leave Request
+          $(".grid-wrapper").on("click",".approveBtn", function(e) {
+            e.preventDefault();
+            // console.log($(this).attr("value"));
+            // console.log(tableData[$(this).attr("value")]);
+            selectedRequest = tableData[$(this).attr("value")];
+            statusData.leaveRequestId = selectedRequest.id;
+            statusData.status = "3";
+            statusData = JSON.stringify(statusData);
+            console.log(statusData);
+            $.ajax({
+                method: "POST",
+                url: "http://localhost/Project/HRMS v1.0/api/leaveRequest/leaveRequest.php",
+                data: statusData,
+                dataType: "json"
+              })
+              .done(function(data) {
+                console.log(data);
+              })
+              .fail(function() {
+                console.log("Incorrect email or password");
+              });
+          });
+
         break;
       }
   });

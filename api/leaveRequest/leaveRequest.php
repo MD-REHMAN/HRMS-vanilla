@@ -20,7 +20,7 @@ if (!isset($data->Filter)) {
 function put($data, $conn) {
   $sql = "UPDATE leaveRequest SET $data->setField $data->Filter";
   // echo "It's POST <br>";
-  // echo $sql;
+  echo $sql;
   if($conn->query($sql) === TRUE) {
     $resdata= array();
     $data->Filter = "where id='".$data->leaveRequestId."'";
@@ -91,8 +91,8 @@ switch ($data->Operation) {
     // $data->Field = "email, firstName, lastName";
     echo get($data, $conn);
     break;
-  case 'ApproveLeaveRequest':
-    $data->Filter = "where id='".$data->leaveRequestId."'";
+  case 'ManageLeaveRequest':
+    $data->Filter = "where id=".$data->leaveRequestId."";
     $data->setField = "status = ".$data->status.", updatedBy = ".$data->updatedBy."";
     put($data, $conn);
     break;

@@ -1,4 +1,4 @@
-define(['jquery', 'handlebars'], function($, Handlebars) {
+define(['jquery'], function($) {
   $(function() {
     // Variable Declaration
     var setCtrl = window.location.search;

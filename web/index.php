@@ -18,6 +18,7 @@
 
   <link rel="stylesheet" href="app/components/footer/footer.css">
   <!-- RequireJS -->
+  <script src="assets/js/module/handlebars/handlebars-v4.0.12.js" charset="utf-8"></script>
   <script src="assets/js/require.js" charset="utf-8"></script>
   <script src="assets/js/config.js" charset="utf-8"></script>
 

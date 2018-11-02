@@ -14,7 +14,7 @@
 </aside>
 
 <script id="handlebars-navbar" type="text/x-handlebars-template">
-  <div>
+  <!-- <div>
     {{#if firstName}}
     <nav class="navbar leftNav">
       <ul class="navList">
@@ -25,6 +25,9 @@
           <ul class="dropdown-menu">
             <li><a href="index.php?page=addUser">Add User</a></</li>
             <li><a href="index.php?page=userList">User List</a></</li>
+            <li role="separator" class="divider"></li>
+            <li><a href="index.php?page=addUser">Add Leave Request</a></</li>
+            <li><a href="index.php?page=userList">Leave Request List</a></</li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li role="separator" class="divider"></li>
@@ -42,8 +45,6 @@
           <ul class="dropdown-menu">
             <li><a href="index.php?page=addUser">Edit Profile</a></</li>
             <li><a href="index.php?page=userList">Something else</a></</li>
-            <!-- <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li> -->
             <li role="separator" class="divider"></li>
             <li><a class="logoutLink">Logout</a></li>
           </ul>
@@ -51,5 +52,5 @@
       </ul>
     </nav>
     {{/if}}
-  </div>
+  </div> -->
 </script>
