@@ -1,1 +1,3 @@
-It's Dashboard
+<div id="dashboardContent">
+  Welcome {{firstName}}!
+</div>

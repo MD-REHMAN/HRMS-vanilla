@@ -67,3 +67,36 @@ define(['jquery'], function($) {
     // }
   });
 });
+
+
+
+
+// Example of closure
+// Best way to declare Function
+// var functionCollection = function() {
+//   var collection = {};
+//   console.log(x);
+//   var x="ideal";
+//
+//   var a = function() {
+//     // console.log(x);
+//     b();
+//     x="been to x";
+//
+//     // Some code
+//   }
+//   var b = function() {
+//     // Some code
+//     console.log(x);
+//   }
+//   var c = function() {
+//     // Some code
+//     x="I'm in c";
+//     // console.log(x);
+//     b();
+//   }
+//   collection.a = a;
+//   collection.c = c;
+//
+//   return collection;
+// }

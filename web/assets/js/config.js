@@ -8,6 +8,7 @@ requirejs.config({
     'main': 'controllers/main',
     'authCtrl': 'controllers/authCtrl',
     'componentsCtrl': 'controllers/componentsCtrl',
+    'dashboardCtrl': 'controllers/dashboardCtrl',
     'userCtrl': 'controllers/userCtrl',
     'leaveRequestCtrl': 'controllers/leaveRequestCtrl',
     'paySlipCtrl': 'controllers/paySlipCtrl',
@@ -22,6 +23,7 @@ requirejs.config({
     'main': ['jquery', 'bootstrap'],
     'componentsCtrl': ['main', 'navbar-template'],
     'authCtrl': ['componentsCtrl'],
+    'dashboardCtrl': ['componentsCtrl'],
     'userCtrl': ['componentsCtrl', 'user-template'],
     'leaveRequestCtrl': ['componentsCtrl', 'leaveRequest-template'],
     'paySlipCtrl': ['componentsCtrl']

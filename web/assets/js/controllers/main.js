@@ -14,7 +14,13 @@ define(['jquery'], function( $ ) {
     switch (window.location.search) {
       case '?page=login':
         require(['authCtrl'], function() {
-          console.log("login - userCauthCtrltrl");
+          console.log("login - authCtrl");
+        });
+        break;
+      case '?page=dashboard':
+        require(['dashboardCtrl'], function() {
+          console.log("dashboard - dashboardCtrl");
+          // Handlebars.precompile();
         });
         break;
       case '?page=addUser':

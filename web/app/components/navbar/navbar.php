@@ -13,7 +13,7 @@
   <span class="themeButton duskThemeButton"></span>
 </aside>
 
-<script id="handlebars-navbar" type="text/x-handlebars-template">
+<!-- <script id="handlebars-navbar" type="text/x-handlebars-template"> -->
   <!-- <div>
     {{#if firstName}}
     <nav class="navbar leftNav">
@@ -53,4 +53,4 @@
     </nav>
     {{/if}}
   </div> -->
-</script>
+<!-- </script> -->
